@@ -1,0 +1,10 @@
+ubuntu@ip-172-31-23-11:~$ cd ~ && touch index.html
+ubuntu@ip-172-31-23-11:~$ echo "<html><body><h1>Hello World</h1></body></html>" > index.html
+ubuntu@ip-172-31-23-11:~$ ls -l index.html
+-rw-rw-r-- 1 ubuntu ubuntu 47 Apr 24 05:58 index.html
+ubuntu@ip-172-31-23-11:~$ chmod 777 index.html
+ubuntu@ip-172-31-23-11:~$ sudo chown www-data:www-data index.html
+ubuntu@ip-172-31-23-11:~$ sudo chmod 755 index.html
+ubuntu@ip-172-31-23-11:~$ ls -l index.html
+-rwxr-xr-x 1 www-data www-data 47 Apr 24 05:58 index.html
+ubuntu@ip-172-31-23-11:~$ 

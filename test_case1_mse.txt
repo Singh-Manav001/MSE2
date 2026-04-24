@@ -1,0 +1,94 @@
+ubuntu@ip-172-31-23-11:~$ whoami
+ubuntu
+ubuntu@ip-172-31-23-11:~$ w
+ 05:50:18 up 1 min,  1 user,  load average: 0.20, 0.14, 0.06
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+ubuntu            13.48.4.203      05:49    1:51   0.00s  0.02s sshd: ubuntu [priv]
+ubuntu@ip-172-31-23-11:~$ last
+ubuntu   pts/0        13.48.4.203      Fri Apr 24 05:49   still logged in
+reboot   system boot  6.17.0-1007-aws  Fri Apr 24 05:48   still running
+
+wtmp begins Fri Apr 24 05:48:25 2026
+ubuntu@ip-172-31-23-11:~$ uname -a && hostname && uptime
+Linux ip-172-31-23-11 6.17.0-1007-aws #7~24.04.1-Ubuntu SMP Thu Jan 22 21:04:49 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+ip-172-31-23-11
+ 05:50:51 up 2 min,  1 user,  load average: 0.11, 0.12, 0.05
+ubuntu@ip-172-31-23-11:~$ sudo groupadd developers && sudo groupadd qa && cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+systemd-timesync:x:996:
+input:x:995:
+sgx:x:994:
+kvm:x:993:
+render:x:992:
+messagebus:x:101:
+syslog:x:102:
+systemd-resolve:x:991:
+uuidd:x:103:
+tss:x:104:
+lxd:x:105:ubuntu
+_ssh:x:106:
+rdma:x:107:
+tcpdump:x:108:
+landscape:x:109:
+fwupd-refresh:x:990:
+polkitd:x:989:
+admin:x:110:
+netdev:x:111:
+_chrony:x:112:
+ubuntu:x:1000:
+developers:x:1001:
+qa:x:1002:
+ubuntu@ip-172-31-23-11:~$ sudo useradd -m -G developers aman
+ubuntu@ip-172-31-23-11:~$ sudo useradd -m -G developers ritu
+ubuntu@ip-172-31-23-11:~$ sudo useradd -m -G qa karan
+ubuntu@ip-172-31-23-11:~$ id aman && id ritu && id karan
+uid=1001(aman) gid=1003(aman) groups=1003(aman),1001(developers)
+uid=1002(ritu) gid=1004(ritu) groups=1004(ritu),1001(developers)
+uid=1003(karan) gid=1005(karan) groups=1005(karan),1002(qa)
+ubuntu@ip-172-31-23-11:~$ sudo pkill -u ritu
+ubuntu@ip-172-31-23-11:~$ sudo userdel -r ritu
+userdel: ritu mail spool (/var/mail/ritu) not found
+ubuntu@ip-172-31-23-11:~$ id ritu
+id: ‘ritu’: no such user
+ubuntu@ip-172-31-23-11:~$ ^C
+ubuntu@ip-172-31-23-11:~$ 
